@@ -1,0 +1,59 @@
+<button routerLink=".."> Back</button>
+
+<h2>Attendance table for Section</h2>
+Load for Section :
+<br><br>
+<label>Select section:</label>
+<select (change)="onSectionChange($any($event.target).value)">
+  <option value=""> choose section </option>
+
+  @for (section of sections; track section.id) {
+  <option [value]="section.id">
+  {{ section.name }}
+  </option>
+  }
+</select>
+
+<table >
+  <thead>
+  <tr>
+    <th>Row</th>
+    <th>Student ID</th>
+    <th>Student Name</th>
+
+    @for (col of columns; track col.key) {
+    <th>{{ col.label }}</th>
+    }
+    <th>Attendance Percentage</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  @for (row of rows; track row.id) {
+  <tr>
+    <td>{{ row.id }}</td>
+        <td>{{ row.studentId }}</td>
+        <td>{{ row.studentName }}</td>
+
+        @for (col of columns; track col.key) {
+  <td>
+    <input
+      type="checkbox"
+      [checked]="row.attendance[col.key]"
+      (change)="toggleAttendance(row, col.key)"
+    />
+  </td>
+
+  }
+  <td></td>
+  <td> <button> Calculate Percentage</button></td>
+ </tr>
+  }
+  </tbody>
+</table>
+
+<button (click)="addRow()">Add Student Row</button>
+<button (click)="addColumn()">Add Week Column</button>
+
+
+

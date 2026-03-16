@@ -1,0 +1,16 @@
+<button routerLink="/admin/sections">Back</button>
+
+<h2>{{ isEditMode ? 'Edit Section' : 'Add Section' }}</h2>
+
+<form (ngSubmit)="onSubmit()" #userForm="ngForm">
+
+  <input type="text" name="Section Name" [(ngModel)]="section.name" pattern="[A-Z][A-Z]_[BIA][END]T*([GV]|[_0-9])" placeholder="Name of the section" required />
+  <br /><br />
+
+  <input type="text" name="Address or Link" [(ngModel)]="section.linkOrAddress" placeholder="Link or address" required />
+  <br /><br />
+
+
+  <button type="submit" >{{ isEditMode ? 'Edit Section' : 'Add Section' }}</button>
+
+</form>

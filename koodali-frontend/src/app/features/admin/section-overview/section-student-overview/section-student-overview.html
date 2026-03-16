@@ -1,0 +1,29 @@
+<button routerLink="/admin/sections"> Back</button>
+
+<h3>Overview of Section {{classId}}'s students</h3>
+<div>
+  <table class="tg"><thead>
+  <tr>
+    <th >Student ID</th>
+    <th>Student's first name</th>
+    <th >Student's last name</th>
+    <th >Student's homework points</th>
+    <th >Student's attendance</th>
+    <th > </th>
+  </tr></thead>
+    <tbody>
+    @for (student of students; track student.id){
+    <tr>
+      <td> {{student.id }}</td>
+        <td>{{student.firstName}} </td>
+          <td>{{student.lastName}} </td>
+        <td> <!--{{student.homeworkPoints}} -->  </td>
+        <td> <!-- {{student.attendancePercentage}}-->   </td>
+      </tr>
+    }
+    </tbody>
+  </table>
+</div>
+
+<button routerLink="."> Reload</button>
+

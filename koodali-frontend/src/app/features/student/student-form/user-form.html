@@ -1,0 +1,61 @@
+<h2>Manual Student Registration Form</h2>
+
+<form (ngSubmit)="onSubmit()" #userForm="ngForm">
+
+  <p>Enter information</p>
+  <input type="text" name="firstName" [(ngModel)]="user.firstName" placeholder="First Name" required />
+
+
+  <input type="text" name="lastName" [(ngModel)]="user.lastName" placeholder="Last Name" required />
+  <br /><br />
+
+  <input type="text" name="city" [(ngModel)]="user.city" placeholder="City" required />
+
+  <input type="text" name="pinCode" [(ngModel)]="user.pinCode" placeholder="pin Code" required />
+  <br /><br />
+
+  <input type="text" name="country" [(ngModel)]="user.country" placeholder="Country" required/>
+  <input type="text" name="fullPostalAddress" [(ngModel)]="user.fullPostalAddress" placeholder="full Postal Address" required />
+  <br />
+   <p>
+
+  <select
+    name="section"
+    [(ngModel)]="user.sectionName" placeholder="Select section" required>
+      <option [value]="" disabled>Select a section</option>
+
+      @for (section of sections; track section.id){
+    <option [value]="section.name">
+      {{section.name}}
+      </option>
+    }
+  </select>
+  </p>
+  Date of Birth:
+  <input type="date" name="dateOfBirth" [(ngModel)]="user.dateOfBirth" placeholder="date of Birth" required/>
+  <br /><br />
+  <input type="text" name="mothersName" [(ngModel)]="user.mothersName" placeholder="mothers Name" required/>
+  <br /><br />
+  <input type="text" name="fathersName" [(ngModel)]="user.fathersName" placeholder="fathers Name" required/>
+  <br /><br />
+  <input type="text" name="fathersEmailID" [(ngModel)]="user.fathersEmailID" placeholder="fathers Email ID" required/>
+  <br /><br />
+  <input type="text" name="mothersEmailID" [(ngModel)]="user.mothersEmailID" placeholder="mothers Email ID" required/>
+  <br /><br />
+  <input type="text" name="childEmailID" [(ngModel)]="user.childEmailID" placeholder="child's Email ID" required/>
+  <br /><br />
+  <input type="text" name="phoneNumber" [(ngModel)]="user.phoneNumber" placeholder="phone Number" required/>
+  <br /><br />
+  <input type="text" name="whatsappNumber" [(ngModel)]="user.whatsappNumber" placeholder="whatsapp Number" required/>
+  <br /><br />
+  Upload the child's photo:
+  <input type="file" class="file-upload"  (change)="onPathToPhotoFileSelected($event)" accept="image/*" placeholder="path to photo" required >
+  <br /><br />
+  Upload the consent form:
+  <input type="file" class="file-upload" (change)="onPathToConsentFormFileSelected($event)" accept=".pdf, .txt" placeholder="path to consent form" required >
+  <br /><br />
+
+ <!--<button routerLink="."> Reload</button>> -->
+  <button type="submit">Submit</button>
+  <button routerLink=".."> Back</button>
+</form>

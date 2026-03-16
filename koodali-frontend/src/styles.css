@@ -1,0 +1,31 @@
+
+button {
+  display: inline-block;
+  padding: 4px 12px;
+  font-size: 15px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  background-color: midnightblue;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 6px cornflowerblue;
+}
+
+button:active {
+  box-shadow: 0 5px #1a626d;
+  transform: translateY(4px);
+}
+
+table,th,td {
+  border: 1px solid;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 8px;
+
+}
+
+tr:hover {background-color: lightskyblue;}
+

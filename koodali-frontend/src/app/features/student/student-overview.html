@@ -1,0 +1,48 @@
+<button routerLink=".."> Back</button>
+
+<h2>Student Overview</h2>
+
+<div>
+  <table class="tg">
+    <thead>
+    <tr>
+      <th>Student ID</th>
+      <th>Student First Name</th>
+      <th>Student Last Name</th>
+      <th>Section</th>
+      <th>Attendance</th>
+      <th>Pending Fees</th>
+      <th>Full Profile</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    @for(student of students; track student.personID){
+    <tr>
+    <td> {{student.personID}} </td>
+     <td>{{student.firstName}} </td>
+    <td>{{student.lastName}} </td>
+     <td>{{student.sectionId}} </td>
+     <td>{{ calculateAttendanceForStudent(student.sectionId,student.personID) }} </td>
+     <td>{{student.pendingFees}}</td>
+    <td> <a [routerLink]="['/student/see-profile/',student.personID]" routerLinkActive="$router_link-active$"> Student Profile </a>  </td>
+  </tr>
+} @empty {
+    <tr>
+      <td colspan="7">No students found</td>
+    </tr>
+    }
+    </tbody>
+  </table>
+
+
+</div>
+
+
+<button routerLink="edit-profile">Manually register student</button>
+<button routerLink="."> Display Students</button>
+<button type="button"> Add students via Excel</button>
+
+
+
+

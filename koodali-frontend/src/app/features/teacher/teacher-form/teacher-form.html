@@ -1,0 +1,32 @@
+<button routerLink="..">Back</button>
+
+<h2>Edit your information!</h2>
+
+<form (ngSubmit)="onSubmit()" #userForm="ngForm">
+
+  <input type="text" name="firstName" [(ngModel)]="teacher.firstName" placeholder="First Name" required />
+  <br /><br />
+
+  <input type="text" name="lastName" [(ngModel)]="teacher.lastName" placeholder="Last Name" required />
+  <br /><br />
+
+  <input type="text" name="city" [(ngModel)]="teacher.city" placeholder="City" required />
+  <br /><br />
+
+  <input type="text" name="pinCode" [(ngModel)]="teacher.pinCode" placeholder="pin Code" required />
+  <br /><br />
+
+  <input type="text" name="country" [(ngModel)]="teacher.country" placeholder="Country" required/>
+  <br /><br />
+  <input type="text" name="fullPostalAddress" [(ngModel)]="teacher.fullPostalAddress" placeholder="full Postal Address" required />
+  <br /><br />
+  <input type="text" name="EmailID" [(ngModel)]="teacher.emailID" placeholder="child's Email ID" required/>
+  <br /><br />
+  <input type="text" name="phoneNumber" [(ngModel)]="teacher.phoneNumber" placeholder="phone Number" required/>
+  <br /><br />
+  <input type="text" name="whatsappNumber" [(ngModel)]="teacher.whatsappNumber" placeholder="whatsapp Number" required/>
+  <br /><br />
+
+  <button type="submit">Submit</button>
+
+</form>
